@@ -1,0 +1,32 @@
+/* Everline Group — modern retail-tech. Plum / orange family, rounded, airy. */
+:root{
+  --font-ui:"Inter","Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+  --font-head:"Inter","Segoe UI",system-ui,sans-serif;
+  --radius:12px; --radius-s:8px;
+  --bg:#f7f4f9; --card:#ffffff; --ink:#261c2c; --head-ink:#3b1450; --muted:#6f6478;
+  --line:#e4dcea; --line-soft:#efe9f3;
+  --accent:#7a2e8e; --accent-2:#f07d1a; --practice:#b35407;
+  --top-bg:linear-gradient(90deg,#3b1450,#6a2380 60%,#8a3a8f); --top-ink:#fff6ee; --top-search-bg:rgba(255,255,255,.16);
+  --nav-bg:#ffffff; --nav-ink:#3b2a45; --nav-muted:#9a8da3; --nav-hover:#f5eef8; --nav-active:#f3e6f6;
+  --toolbar-bg:#fbf8fc; --th-bg:#f8f3fa; --th-ink:#6a5675; --row-hover:#fcf6fe; --kcol-bg:#f3edf6;
+  --chip-bg:#f07d1a; --chip-ink:#fff;
+  --ok:#1f8a5b; --warn:#d97706; --danger:#c2334d;
+  --shadow:0 2px 8px rgba(59,20,80,.06);
+  --pill-gray-bg:#f0ecf3; --pill-gray-ink:#5c5065;
+  --pill-blue-bg:#e3ecfb; --pill-blue-ink:#2a52a3;
+  --pill-green-bg:#dcf3e7; --pill-green-ink:#16673f;
+  --pill-amber-bg:#fdeed8; --pill-amber-ink:#8f4d00;
+  --pill-red-bg:#fbe1e6; --pill-red-ink:#9b1e37;
+  --pill-purple-bg:#f1e2f5; --pill-purple-ink:#6a2380;
+  --pill-teal-bg:#fff0e2; --pill-teal-ink:#a14f07;
+}
+.topbar{background:var(--top-bg)}
+.topbar .logo .mark{background:#f07d1a;border-radius:50%}
+.leftnav{border-right:1px solid var(--line)}
+.leftnav a.active{border-left-color:#f07d1a;color:#6a2380}
+.statcard{border-left:none;border-top:4px solid var(--accent)}
+.statcard.ok{border-top-color:var(--ok)} .statcard.warn{border-top-color:var(--warn)} .statcard.bad{border-top-color:var(--danger)}
+.btn{border-radius:999px}
+footer.simfooter{background:#3b1450;color:#d9c9e2}
+footer.simfooter .btn.ghost{color:#f3e6f6;border-color:#9a8da3}
+.pagehead h1{font-weight:800;letter-spacing:-.01em}

@@ -25,3 +25,13 @@ cd goldenpath && python -m pytest tests && python ci_checks.py   # R12: the refe
 
 ## Disclaimer
 Educational material, not professional advice. Adapt every artifact to your context and obligations.
+
+## Hands-on practice workspace — Everline Hub — Engineering Head Workspace
+
+`site/` holds a static, offline-capable training simulation that accompanies *The Engineering Head's Handbook*: realistic enterprise applications with seeded data, a simulated inbox and clock, persona switching ("View as"), an "Explain this screen" panel and graded missions mapped to the book. **Every page has a ▶ Practice Now button**: a step-by-step guide, a live template/calculator pre-filled with the workspace's numbers, formulas, data-collection sources, how to produce the report, the value to the organisation, and how to do it in the AI age.
+
+- **Run locally:** open `site/index.html` in a browser — no server or install needed.
+- **Publish:** Settings → Pages → Source: **GitHub Actions**. The included workflow (`.github/workflows/pages.yml`) deploys `site/` on every push to `main` that changes it.
+- Details: `site/README.md` (missions index, data reset/export) and `site/docs/BUILD-BIBLE.md` (decisions, canon placement, QA).
+
+> Training simulation. All organisations, people and data are fictional.
