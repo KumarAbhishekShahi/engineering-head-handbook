@@ -4,14 +4,14 @@ import numpy as np, pandas as pd
 # ---------- Part VI: budget ----------
 def lab_budget():
     rows = [  # (line, RTB, CTB) in $k — Asha's Platforms & Commerce org
-        ("Permanent staff (210 FTE)", 15200, 3800),
-        ("Vendor/contract staff (90)", 4300, 2900),
-        ("Cloud & infrastructure", 3900, 600),
-        ("Software licences & tools", 1750, 250),
-        ("Platform programmes", 0, 2100),
-        ("Modernization (strangler)", 0, 1900),
-        ("Security & compliance", 850, 400),
-        ("Training & travel", 380, 120),
+        ("Permanent staff (210 FTE)", 10900, 2700),
+        ("Vendor/contract staff (90)", 3050, 2050),
+        ("Cloud & infrastructure", 3250, 450),
+        ("Software licences & tools", 1450, 150),
+        ("Platform programmes", 0, 1600),
+        ("Modernization (strangler)", 0, 1500),
+        ("Security & compliance", 700, 280),
+        ("Training & travel", 250, 70),
     ]
     df = pd.DataFrame(rows, columns=["line", "RTB", "CTB"])
     df["Total"] = df.RTB + df.CTB
@@ -22,11 +22,14 @@ def lab_budget():
         print(f"{r.line:<28}{r.RTB:>8,}{r.CTB:>8,}{r.Total:>9,}")
     print(f"{'TOTAL':<28}{tot.RTB:>8,}{tot.CTB:>8,}{tot.Total:>9,}")
     print(f"\nRTB share: {tot.RTB/tot.Total:.0%}  (benchmark unease starts ~70%)")
-    print("\nThe 15% cut ($4.26M) — three honest options:")
-    print(" A pause bottom-quartile CTB programmes  saves $2.4M  delays 2 launches 2 qtrs")
-    print(" B vendor ramp-down 30 seats             saves $1.4M  delivery capacity -11%")
-    print(" C cloud rightsize + licence rationalise saves $0.9M  one-off effort, low risk")
-    print(" recommended: C + A + partial B -> $4.3M, permanent-staff layoffs avoided")
+    print(f"blended loaded cost: permanent ${(df.Total[0])/210:,.1f}k, vendor ${(df.Total[1])/90:,.1f}k per head")
+    cut = tot.Total * 0.15
+    print(f"\nThe 15% cut (${cut/1000:.2f}M) — three options:")
+    print(" A pause bottom-quartile CTB  $2.25M  2 launches slip")
+    print(" B vendor ramp-down 30 seats  $1.70M  capacity -10%")
+    print(" C cloud + licence rationalise $0.90M  low risk")
+    print(" recommended: C + A + 20 vendor seats ($1.13M)")
+    print("   = $4.28M; no permanent-staff layoffs")
 
 def lab_finops():
     print("Unit economics, Commerce platform (quarter):")
@@ -63,7 +66,7 @@ def lab_dora(return_df=False):
     print("anti-gaming rule: four keys move together or not at all; never target one alone.")
 
 def lab_devex():
-    print("DevEx survey, 287 responses (74%) — top friction, 1-5 pain score:")
+    print("DevEx survey, 222 of 300 engineers responded (74%) — top friction, 1-5 pain score:")
     print("  flaky end-to-end tests        3.9   'reruns are a tax on every merge'")
     print("  local env setup               3.6   median 3.5 days to first commit")
     print("  unclear service ownership     3.3   '11 Slack hops to find an owner'")
